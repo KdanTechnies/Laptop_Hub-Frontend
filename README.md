@@ -1,6 +1,7 @@
 💻 Laptop Hub
+📖 Overview
 
-Laptop Hub is a modern website designed to help users explore, compare, and learn about different laptops in one place. The platform provides detailed laptop information, specifications, and recommendations for different needs such as gaming, work, study, and everyday use.
+Laptop Hub is a modern web application built with Next.js, React, and Tailwind CSS. It helps users explore, compare, and learn about different laptops through a fast, responsive, and user-friendly interface. The platform provides detailed specifications and recommendations for various use cases such as gaming, business, students, and everyday computing.
 
 🌟 Features
 
@@ -10,27 +11,34 @@ View detailed specifications (CPU, RAM, storage, price, etc.)
 
 Compare laptops easily
 
-User-friendly and responsive design
+Responsive UI built with Tailwind CSS
 
-Categories for different use cases (Gaming, Business, Student, etc.)
+Organized categories (Gaming, Business, Student, Everyday Use)
 
-🛠️ Technologies Used
+Modern routing and layouts using Next.js App Router
 
-HTML5 – Structure of the website
+🛠️ Tech Stack
 
-CSS3 – Styling and layout
+Next.js – Framework for server-side rendering and routing
 
-JavaScript – Interactivity and functionality
-(Add frameworks or backend tools here if you used any)
+React – Component-based UI development
+
+Tailwind CSS – Utility-first styling
+
+TypeScript – Type safety and better developer experience
+
+State Management – Centralized store for application state
 
 📂 Project Structure
-Laptop-Hub/
-│
-├── index.html
-├── css/
-│   └── style.css
-├── js/
-│   └── script.js
-├── images/
-│   └── laptops/
-└── README.md
+laptop-frontend/
+├── app/               # App Router pages and layouts
+│   ├── page.tsx
+│   ├── layout.tsx
+│   └── login/
+│       └── page.tsx
+├── components/        # Reusable UI components (Navbar, UI elements)
+├── lib/               # Utility functions and API helpers
+├── store/             # State management (useStore.ts)
+├── public/            # Static assets
+├── tailwind.config.ts # Tailwind CSS configuration
+└── package.json       # Project dependencies and scripts
