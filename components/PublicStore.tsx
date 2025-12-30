@@ -42,14 +42,14 @@ export default function PublicStore() {
       <section className="py-20 lg:py-32 bg-slate-950 text-white relative overflow-hidden">
         <div className="container mx-auto px-4 relative z-10 text-center">
           <Badge className="mb-6 bg-blue-600 hover:bg-blue-600 border-none px-4 py-1 animate-bounce uppercase tracking-widest text-[10px] font-black">
-            Global Tech Hub
+            Latest Laptop On FlashSales 2026
           </Badge>
           <h1 className="text-5xl lg:text-8xl font-black tracking-tighter mb-8 leading-tight">
-            ENGINEERED FOR <br /> 
-            <span className="text-blue-500 underline decoration-blue-500/30 italic">PRECISION.</span>
+            BEYOND  <br /> 
+            <span className="text-blue-500 underline decoration-blue-500/30 italic"> FAST.</span>
           </h1>
           <p className="max-w-2xl mx-auto text-slate-400 text-lg lg:text-xl mb-10 font-medium">
-            The ultimate destination for professional-grade laptops. Join 10,000+ developers and creators who trust our curated workstations.
+            We stock the hardware other retailers can’t handle. From liquid-metal thermals to high-density silicon, Emmy Core delivers the exact specs required by the top 1% of engineering teams in West Africa.
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/register">
