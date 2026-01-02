@@ -204,7 +204,7 @@ export default function AuthenticatedStore() {
                         onClick={() => api.post(`/cart/${product.id}`).then(() => toast.success("Deployment added to cart"))}
                       >
                         <ShoppingCart className="h-4 w-4 mr-2" />
-                        Configure & Buy
+                        Add to cart
                       </Button>
                       <Button 
                         variant="outline" 
