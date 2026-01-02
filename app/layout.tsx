@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 // --- PROFESSIONAL METADATA (American Standard) ---
 export const metadata: Metadata = {
-  title: "EMMY CORE | High-Performance Workstations",
+  title: "EMMY LAPTOP HUB | High-Performance Laptops",
   description: "The global standard for professional-grade computing. Engineered for peak sustained performance. Deploying the world's most capable hardware to the West African technical elite.",
   keywords: ["Laptops", "RTX Workstations", "MacBook Pro Lagos", "High performance computing", "Emmy Core"],
 };
