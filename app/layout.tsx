@@ -3,12 +3,13 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/sonner";
+import { Suspense } from "react"; // 1. Import Suspense
 
 const inter = Inter({ subsets: ["latin"] });
 
 // --- PROFESSIONAL METADATA (American Standard) ---
 export const metadata: Metadata = {
-  title: "EMMY LAPTOP HUB | High-Performance Laptops",
+  title: "EMMY CORE | High-Performance Workstations",
   description: "The global standard for professional-grade computing. Engineered for peak sustained performance. Deploying the world's most capable hardware to the West African technical elite.",
   keywords: ["Laptops", "RTX Workstations", "MacBook Pro Lagos", "High performance computing", "Emmy Core"],
 };
@@ -19,15 +20,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    /**
-     * Added suppressHydrationWarning here.
-     * This stops React from throwing errors when browser extensions (like ColorZilla)
-     * inject attributes like 'cz-shortcut-listen' into your HTML.
-     */
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased selection:bg-blue-600 selection:text-white`}>
-        {/* The Global Navigation */}
-        <Navbar />
+        
+        {/* 
+          2. CRITICAL FIX: Wrapped Navbar in Suspense.
+          Since the Navbar now uses 'useSearchParams' for the search bar, 
+          Next.js requires a Suspense boundary to handle client-side rendering 
+          during the Vercel build process.
+        */}
+        <Suspense fallback={
+          <div className="h-20 w-full bg-white/80 border-b backdrop-blur-md flex items-center px-4 justify-between">
+            <div className="h-8 w-32 bg-slate-100 animate-pulse rounded-lg" />
+            <div className="h-10 w-64 bg-slate-100 animate-pulse rounded-full hidden md:block" />
+            <div className="h-8 w-24 bg-slate-100 animate-pulse rounded-lg" />
+          </div>
+        }>
+          <Navbar />
+        </Suspense>
         
         {/* 
           Main content area. 
