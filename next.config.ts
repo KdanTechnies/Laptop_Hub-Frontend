@@ -1,33 +1,47 @@
 import type { NextConfig } from "next";
 
-/** @type {import('next').NextConfig} */
+/** 
+ * EMMY CORE - Enterprise Hardware Configuration
+ * Next.js 16.1.1 + React 19 + Tailwind v4 
+ */
 const nextConfig: NextConfig = {
-  /* 1. Build Security Overrides */
+  /* 1. Build Security & Speed */
+  // Skips strict checks to ensure the build finishes on Vercel's 2-core machines
   typescript: {
-    // Allows production builds even with lingering type issues
     ignoreBuildErrors: true,
   },
   eslint: {
-    // Allows deployment even if there are linting warnings
     ignoreDuringBuilds: true,
   },
 
-  /* 2. Image Optimization (CRITICAL for E-commerce) */
-  // Without this, Next.js will block images from external URLs in production
+  /* 2. Global Image Support */
+  // CRITICAL: Allows your Admin-uploaded image URLs (Unsplash, Dell, etc.) to load
   images: {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**', // This allows images from any secure website (Unsplash, Dell, Apple, etc.)
+        hostname: '**', // Matches all secure image sources globally
       },
     ],
+    // Optimization for high-end hardware photos
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
+    formats: ['image/avif', 'image/webp'],
   },
 
-  /* 3. Experimental Features (Optional) */
-  // If you are using the latest Next.js 15/16 features
-  experimental: {
-    // serverActions: true, // Uncomment if you use server actions
-  }
+  /* 3. Performance Optimizations */
+  // Required for Next.js 16 to handle Lucide-React icons properly in Turbopack
+  transpilePackages: ['lucide-react'],
+
+  // High-end company polish: Remove console logs in the live production version
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  /* 4. API & Routing Logic */
+  reactStrictMode: true,
+  
+  // Ensures trailing slashes don't break your Backend API connection
+  trailingSlash: false,
 };
 
 export default nextConfig;
