@@ -1,4 +1,4 @@
-# 💻 Emmy Laptop Hub
+# Emmy Laptop Hub Lagos Nig
 
 A modern, fast, and responsive laptop showcase platform built to help customers discover and explore laptops with ease.
 
