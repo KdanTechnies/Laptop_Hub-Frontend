@@ -8,11 +8,6 @@ This project was developed as a real-world business solution to strengthen **Emm
 
 ---
 
-## 🚀 Live Demo
-
-**Website:** *(Add your deployed URL here)*
-
----
 
 ## ✨ Features
 
